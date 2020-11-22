@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CursosController;
+use App\Http\Controllers\GaleriaController;
+use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,23 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/inicio', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::get('/cursos/ccna', function () {
-    return "estamos ccna";
-});
-Route::get('/cursos/ccnp', function () {
-    return "estamos en ccnp";
-});
-Route::get('/staff', function () {
-    return "estamos en staff";
-});
-Route::get('/galeria', function () {
-    return "estamos en galeria";
-});
+Route::get('/cursos/ccna', [CursosController::class,"index"]);
+Route::get('/cursos/ccnp', [CursosController::class,"index"]);
+Route::get('/staff',[StaffController::class,"index"]);
+Route::get('/galeria',[GaleriaController::class,"index"]);
 Route::get('/contacto', function () {
-    return "estamos en contacto";
+    return view("contacto");
 });
