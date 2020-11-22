@@ -19,10 +19,10 @@ Route::get('/', function () {
 Route::get('/inicio', function () {
     return view('welcome');
 });
-Route::get('/ccna', function () {
+Route::get('/cursos/ccna', function () {
     return "estamos ccna";
 });
-Route::get('/ccnp', function () {
+Route::get('/cursos/ccnp', function () {
     return "estamos en ccnp";
 });
 Route::get('/staff', function () {
